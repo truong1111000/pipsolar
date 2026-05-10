@@ -72,6 +72,11 @@ CONF_BATTERY_VOLTAGE_OFFSET_FOR_FANS_ON = "battery_voltage_offset_for_fans_on"
 CONF_EEPROM_VERSION = "eeprom_version"
 CONF_PV_CHARGING_POWER = "pv_charging_power"
 
+#HPVB
+CONF_PV2_INPUT_VOLTAGE = "pv2_input_voltage"
+CONF_PV2_INPUT_CURRENT = "pv2_input_current"
+CONF_PV2_INPUT_POWER = "pv2_input_power"
+
 
 TYPES = {
     CONF_GRID_RATING_VOLTAGE: sensor.sensor_schema(
@@ -264,6 +269,22 @@ TYPES = {
         accuracy_decimals=1,
     ),
     CONF_PV_CHARGING_POWER: sensor.sensor_schema(
+        unit_of_measurement=UNIT_WATT,
+        accuracy_decimals=1,
+        device_class=DEVICE_CLASS_POWER,
+    ),
+   
+    CONF_PV2_INPUT_VOLTAGE: sensor.sensor_schema(
+        unit_of_measurement=UNIT_VOLT,
+        accuracy_decimals=1,
+        device_class=DEVICE_CLASS_VOLTAGE,
+    ),
+	CONF_PV2_INPUT_CURRENT: sensor.sensor_schema(
+        unit_of_measurement=UNIT_AMPERE,
+        accuracy_decimals=1,
+        device_class=DEVICE_CLASS_CURRENT,
+    ),
+	CONF_PV2_INPUT_POWER: sensor.sensor_schema(
         unit_of_measurement=UNIT_WATT,
         accuracy_decimals=1,
         device_class=DEVICE_CLASS_POWER,

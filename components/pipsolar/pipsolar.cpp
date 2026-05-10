@@ -824,6 +824,15 @@ void Pipsolar::loop() {
         }
         this->state_ = STATE_POLL_DECODED;
         break;
+	  case POLLING_HPVB:
+        ESP_LOGD(TAG, "Decode HPVB");
+        sscanf(                                                                                              // NOLINT
+            tmp,                                                                                             // NOLINT
+            "(%f %f %f ",  // NOLINT
+            &value_pv2_input_voltage_, &value_pv2_input_current_, &value_pv2_input_power_);                         // NOLINT
+
+        this->state_ = STATE_POLL_DECODED;
+        break;
       case POLLING_QT:
         ESP_LOGD(TAG, "Decode QT");
         if (this->last_qt_) {

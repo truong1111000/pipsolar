@@ -91,6 +91,11 @@ class Pipsolar : public uart::UARTDevice, public PollingComponent {
   PIPSOLAR_BINARY_SENSOR(switch_on, QPIGS, int)
   PIPSOLAR_BINARY_SENSOR(dustproof_installed, QPIGS, int)
 
+  //HPVB values
+  PIPSOLAR_SENSOR(pv2_input_voltage, HPVB, float)
+  PIPSOLAR_SENSOR(pv2_input_current, HPVB, float)
+  PIPSOLAR_SENSOR(pv2_input_power, HPVB, float)
+
   // QPIRI values
   PIPSOLAR_SENSOR(grid_rating_voltage, QPIRI, float)
   PIPSOLAR_SENSOR(grid_rating_current, QPIRI, float)

@@ -501,6 +501,8 @@ void Pipsolar::loop() {
 		if (this->pv2_input_power_) {
           this->pv2_input_power_->publish_state(value_pv2_input_power_);
         }
+		this->state_ = STATE_IDLE;
+ 		break;
       case POLLING_QT:
       case POLLING_QMN:
         this->state_ = STATE_IDLE;
